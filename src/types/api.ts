@@ -18,6 +18,7 @@ export type ApiRestaurant = {
       coordinates: [number, number]
     }
   }
+  logoUrl: string
 }
 
 export type RestaurantsApiResponse = {

@@ -23,7 +23,8 @@ export async function fetchRestaurantsByPostcode(postcode: string): Promise<Rest
             coordinates: {
                 longitude: long,
                 latitude: lat
-            }
+            },
+            logoUrl: restaurant.logoUrl
         }
     })
 

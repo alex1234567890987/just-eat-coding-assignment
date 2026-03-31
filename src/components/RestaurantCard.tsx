@@ -6,25 +6,45 @@ type RestaurantCardProps = {
 
 function RestaurantCard({ restaurant }: RestaurantCardProps) {
   return (
-    <article className="restaurant-card">
+<article className="restaurant-card">
+  <div className="restaurant-card__logo">
+    {restaurant.logoUrl ? (
+      <img
+        className="restaurant-card__image"
+        src={restaurant.logoUrl}
+        alt={`${restaurant.name} logo`}
+      />
+    ) : (
+      <div className="restaurant-card__placeholder" />
+    )}
+  </div>
+
+  <div className="restaurant-card__content">
+    <div className="restaurant-card__top-row">
       <h2 className="restaurant-card__title">{restaurant.name}</h2>
-      <p className="restaurant-card__meta">
-        <strong>Cuisines:</strong> {restaurant.cuisines.join(', ')}
-      </p>
-      <p className="restaurant-card__meta">
-        <strong>Rating:</strong> {restaurant.starRating}
-      </p>
-      <p className="restaurant-card__meta">
-        <strong>Rating count:</strong> {restaurant.ratingCount}
-      </p>
-      <p className="restaurant-card__meta">
-        <strong>Address:</strong> {restaurant.address}
-      </p>
-      <p className="restaurant-card__meta">
-        <strong>Coordinates:</strong> {restaurant.coordinates.latitude},{' '}
-        {restaurant.coordinates.longitude}
-      </p>
-    </article>
+
+      <div className="restaurant-card__rating">
+        <span className="restaurant-card__rating-star">★</span>
+        <span className="restaurant-card__rating-value">
+          {restaurant.starRating.toFixed(1)}
+        </span>
+        <span className="restaurant-card__rating-count">
+          ({restaurant.ratingCount.toLocaleString()})
+        </span>
+      </div>
+    </div>
+
+    <div className="restaurant-card__cuisines">
+      {restaurant.cuisines.map((cuisine) => (
+        <span key={cuisine} className="restaurant-card__pill">
+          {cuisine}
+        </span>
+      ))}
+    </div>
+
+    <p className="restaurant-card__address">{restaurant.address}</p>
+  </div>
+</article>
   )
 }
 

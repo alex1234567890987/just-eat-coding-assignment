@@ -29,12 +29,14 @@ function App() {
 
   return (
     <main className="app">
-      <header className="app-header">
-        <h1>Just Eat Restaurant Finder</h1>
-        <p className="app-subtitle">
-          Showing the first 10 restaurants for EN27EQ
-        </p>
-      </header>
+    <header className="app-header">
+      <div className="app-header__icon">⌂</div>
+
+      <div className="app-header__text">
+        <h1>Just Eat restaurant finder</h1>
+        <p className="app-subtitle">Showing 10 restaurants near EN27EQ</p>
+      </div>
+    </header>
 
       {loading && <p>Loading restaurants...</p>}
       {error && <p>{error}</p>}

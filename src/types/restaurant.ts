@@ -9,4 +9,5 @@ export type Restaurant = {
     latitude: number
     longitude: number
   }
+  logoUrl: string
 }
