@@ -2,6 +2,7 @@ import './App.css';
 import { useEffect, useState } from 'react';
 import type { Restaurant } from './types/restaurant';
 import { fetchRestaurantsByPostcode } from './services/restaurants';
+import RestaurantList from './components/RestaurantList';
 
 function App() {
   const [restaurants, setRestaurants] = useState<Restaurant[]>([]);
@@ -33,21 +34,7 @@ function App() {
       {loading && <p>Loading restaurants...</p>}
       {error && <p>{error}</p>}
 
-      {!loading &&
-      !error &&
-      restaurants.map((restaurant) => (
-        <section key={restaurant.id}>
-          <h2>{restaurant.name}</h2>
-          <p>Cuisines: {restaurant.cuisines.join(', ')}</p>
-          <p>Rating: {restaurant.starRating}</p>
-          <p>Rating count: {restaurant.ratingCount}</p>
-          <p>Address: {restaurant.address}</p>
-          <p>
-            Coordinates: {restaurant.coordinates.latitude},{' '}
-            {restaurant.coordinates.longitude}
-          </p>
-        </section>
-      ))}
+      {!loading && !error && <RestaurantList restaurants={restaurants} />}
       
 
     </main>
