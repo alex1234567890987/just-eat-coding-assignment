@@ -7,11 +7,11 @@ type RestaurantListProps = {
 
 function RestaurantList({ restaurants }: RestaurantListProps) {
   return (
-    <>
+    <section className="restaurant-list">
       {restaurants.map((restaurant) => (
         <RestaurantCard key={restaurant.id} restaurant={restaurant} />
       ))}
-    </>
+    </section>
   )
 }
 

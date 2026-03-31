@@ -6,16 +6,25 @@ type RestaurantCardProps = {
 
 function RestaurantCard({ restaurant }: RestaurantCardProps) {
   return (
-    <section>
-      <h2>{restaurant.name}</h2>
-      <p>Cuisines: {restaurant.cuisines.join(', ')}</p>
-      <p>Rating: {restaurant.starRating}</p>
-      <p>Rating count: {restaurant.ratingCount}</p>
-      <p>Address: {restaurant.address}</p>
-      <p>
-        Coordinates: {restaurant.coordinates.latitude}, {restaurant.coordinates.longitude}
+    <article className="restaurant-card">
+      <h2 className="restaurant-card__title">{restaurant.name}</h2>
+      <p className="restaurant-card__meta">
+        <strong>Cuisines:</strong> {restaurant.cuisines.join(', ')}
       </p>
-    </section>
+      <p className="restaurant-card__meta">
+        <strong>Rating:</strong> {restaurant.starRating}
+      </p>
+      <p className="restaurant-card__meta">
+        <strong>Rating count:</strong> {restaurant.ratingCount}
+      </p>
+      <p className="restaurant-card__meta">
+        <strong>Address:</strong> {restaurant.address}
+      </p>
+      <p className="restaurant-card__meta">
+        <strong>Coordinates:</strong> {restaurant.coordinates.latitude},{' '}
+        {restaurant.coordinates.longitude}
+      </p>
+    </article>
   )
 }
 

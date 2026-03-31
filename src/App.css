@@ -1,16 +1,49 @@
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: #f7f7f7;
-  color: #222;
-}
-
-main {
-  max-width: 800px;
+.app {
+  max-width: 960px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 32px 20px 48px;
 }
 
-h1 {
-  margin-bottom: 0.5rem;
+.app-header {
+  margin-bottom: 24px;
+}
+
+.app-header h1 {
+  margin: 0 0 8px;
+  color: var(--color-text);
+}
+
+.app-subtitle {
+  margin: 0;
+  color: var(--color-text);
+  opacity: 0.8;
+}
+
+.restaurant-list {
+  display: grid;
+  gap: 16px;
+}
+
+.restaurant-card {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-left: 6px solid var(--color-accent);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(36, 46, 48, 0.06);
+}
+
+.restaurant-card__title {
+  margin: 0 0 12px;
+  font-size: 1.25rem;
+  color: var(--color-text);
+}
+
+.restaurant-card__meta {
+  margin: 0 0 8px;
+  line-height: 1.5;
+}
+
+.restaurant-card__meta:last-child {
+  margin-bottom: 0;
 }

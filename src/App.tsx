@@ -28,15 +28,18 @@ function App() {
   }, [])
 
   return (
-    <main>
-      <h1>Just Eat Restaurant Finder</h1>
+    <main className="app">
+      <header className="app-header">
+        <h1>Just Eat Restaurant Finder</h1>
+        <p className="app-subtitle">
+          Showing the first 10 restaurants for EN27EQ
+        </p>
+      </header>
 
       {loading && <p>Loading restaurants...</p>}
       {error && <p>{error}</p>}
 
       {!loading && !error && <RestaurantList restaurants={restaurants} />}
-      
-
     </main>
   )
 }
