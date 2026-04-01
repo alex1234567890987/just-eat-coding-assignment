@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import type { Restaurant } from './types/restaurant';
 import { fetchRestaurantsByPostcode } from './services/restaurants';
 import RestaurantList from './components/RestaurantList';
+import { isValidPostcode } from './utils/validation';
 
 import JETLogo from './assets/JET-Logo.svg';
 
@@ -18,9 +19,9 @@ function App() {
     event.preventDefault();
 
     const cleaned = postcodeInput.replace(/\s+/g, '').toUpperCase();
-    const postcodeRegex = /^[A-Z]{1,2}[0-9][A-Z0-9]?[0-9][A-Z]{2}$/;
+    
 
-    if (!postcodeRegex.test(cleaned)) {
+    if (!isValidPostcode(cleaned)) {
       setError('Please enter a valid UK postcode');
       return;
     }
