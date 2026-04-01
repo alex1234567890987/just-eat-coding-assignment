@@ -1,4 +1,5 @@
 import type { Restaurant } from '../types/restaurant'
+import { MapPin, UtensilsCrossed } from 'lucide-react';
 
 type RestaurantCardProps = {
   restaurant: Restaurant
@@ -35,14 +36,19 @@ function RestaurantCard({ restaurant }: RestaurantCardProps) {
     </div>
 
     <div className="restaurant-card__cuisines">
-      {restaurant.cuisines.map((cuisine) => (
-        <span key={cuisine} className="restaurant-card__pill">
-          {cuisine}
-        </span>
-      ))}
+        <UtensilsCrossed size={14} className="restaurant-card__meta-icon" />
+        {restaurant.cuisines.map((cuisine) => (
+            <span key={cuisine} className="restaurant-card__pill">
+                {cuisine}
+            </span>
+        ))}
     </div>
 
-    <p className="restaurant-card__address">{restaurant.address}</p>
+    <div className="restaurant-card__address-row">
+        <MapPin size={14} className="restaurant-card__meta-icon" />
+        <p className="restaurant-card__address">{restaurant.address}</p>
+    </div>
+
   </div>
 </article>
   )

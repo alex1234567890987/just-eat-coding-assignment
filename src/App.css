@@ -23,7 +23,7 @@
   color: var(--color-text);
   letter-spacing: -1.5px;
   line-height: 1.1;
-  margin-top: 0;
+  margin: 2;
 }
 
 .app-title--accent {
@@ -50,7 +50,7 @@
 
 .postcode-form__input {
   flex: 1;
-  min-width: 220px;
+  min-width: 0;
   padding: 12px 14px;
   border: 1px solid var(--color-border);
   border-radius: 10px;
@@ -79,6 +79,18 @@
 .restaurant-list {
   display: grid;
   gap: 18px;
+}
+
+.restaurant-list__empty {
+  text-align: center;
+  padding: 48px 20px;
+  opacity: 0.6;
+}
+
+.restaurant-list__count {
+  margin: 0 0 4px;
+  font-size: 0.85rem;
+  opacity: 0.6;
 }
 
 /* ── Restaurant card ── */
@@ -125,9 +137,10 @@
 
 .restaurant-card__top-row {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: flex-start;
-  gap: 16px;
+  gap: 4px 16px;
   margin-bottom: 10px;
 }
 
@@ -157,26 +170,69 @@
   opacity: 0.75;
 }
 
+.restaurant-card__meta-icon {
+  color: var(--color-text);
+  opacity: 0.4;
+  flex-shrink: 0;
+}
+
 .restaurant-card__cuisines {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
-  margin-bottom: 12px;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 10px;
 }
 
 .restaurant-card__pill {
   display: inline-block;
-  padding: 6px 12px;
+  padding: 3px 10px;
   border-radius: 999px;
   background-color: var(--color-accent);
   color: var(--color-surface);
-  font-size: 0.95rem;
+  font-size: 0.8rem;
   font-weight: 600;
+}
+
+.restaurant-card__address-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
 }
 
 .restaurant-card__address {
   margin: 0;
-  font-size: 1rem;
+  font-size: 0.85rem;
   line-height: 1.4;
-  opacity: 0.9;
+  opacity: 0.75;
+}
+
+/* ── Mobile ── */
+
+@media (max-width: 480px) {
+  .app-header__logo {
+    height: 48px;
+  }
+
+  .app-title {
+    font-size: 28px;
+    letter-spacing: -1px;
+  }
+
+  .postcode-form__controls {
+    flex-direction: column;
+  }
+
+  .postcode-form__button {
+    width: 100%;
+  }
+
+  .restaurant-card {
+    grid-template-columns: 60px 1fr;
+  }
+
+  .restaurant-card__logo {
+    width: 60px;
+    height: 60px;
+  }
 }
