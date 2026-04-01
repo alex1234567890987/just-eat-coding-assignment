@@ -4,41 +4,84 @@
   padding: 32px 20px 48px;
 }
 
+/* ── Header ── */
+
 .app-header {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  margin-bottom: 28px;
+  margin-bottom: 2rem;
 }
 
-.app-header__icon {
-  width: 48px;
-  height: 48px;
-  border-radius: 14px;
-  background-color: var(--color-accent);
-  display: grid;
-  place-items: center;
-  color: white;
-  font-size: 24px;
-  flex-shrink: 0;
+.app-header__logo {
+  height: 92px;
+  display: block;
+  margin: 0 auto 12px;
+  max-width: 100%;
 }
 
-.app-header__text h1 {
-  margin: 0 0 4px;
-  font-size: 2rem;
+.app-title {
+  font-size: 42px;
+  font-weight: 800;
+  color: var(--color-text);
+  letter-spacing: -1.5px;
   line-height: 1.1;
+  margin-top: 0;
 }
 
-.app-subtitle {
-  margin: 0;
-  font-size: 1.1rem;
-  opacity: 0.8;
+.app-title--accent {
+  color: var(--color-accent);
 }
+
+/* ── Search form ── */
+
+.postcode-form {
+  margin-bottom: 24px;
+}
+
+.postcode-form__label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.postcode-form__controls {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.postcode-form__input {
+  flex: 1;
+  min-width: 220px;
+  padding: 12px 14px;
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  font: inherit;
+  background-color: var(--color-surface);
+  color: var(--color-text);
+}
+
+.postcode-form__button {
+  padding: 12px 18px;
+  border: none;
+  border-radius: 10px;
+  font: inherit;
+  font-weight: 600;
+  background-color: var(--color-accent);
+  color: white;
+  cursor: pointer;
+}
+
+.postcode-form__button:hover {
+  opacity: 0.92;
+}
+
+/* ── Restaurant list ── */
 
 .restaurant-list {
   display: grid;
   gap: 18px;
 }
+
+/* ── Restaurant card ── */
 
 .restaurant-card {
   display: grid;
