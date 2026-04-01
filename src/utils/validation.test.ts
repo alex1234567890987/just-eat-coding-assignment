@@ -25,4 +25,8 @@ describe('isValidPostcode', () => {
   it('rejects a partial postcode', () => {
     expect(isValidPostcode('EN2')).toBe(false);
   });
+
+  it.todo('rejects a correctly formatted but non-existent postcode', () => {
+    expect(isValidPostcode('ZZ9 9ZZ')).toBe(false);
+  });
 });
